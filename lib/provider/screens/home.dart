@@ -16,7 +16,7 @@ void main() {
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // var movies = context.watch<MovieProvider>().movies;
+    var movies = context.watch<MovieProvider>().movies;
     var movielist = context.watch<MovieProvider>().wishmovie;
 
     return Scaffold(
@@ -41,37 +41,37 @@ class Home extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ListView.builder(
-                        // itemCount:movies.length ,
+                        itemCount:movies.length ,
 
                         itemBuilder: (context, index) {
-                          // var movie = movies[index];
-                          // return Card(
-                          //   key: ValueKey(movie.title),
-                          //   child: ListTile(
-                          //     title: Text(movie.title),
-                          //     subtitle: Text(movie.time ?? "No time"),
-                          //     trailing: IconButton(
-                          //       icon: Icon(Icons.favorite),
-                          //       color: movielist.contains(movie)
-                          //           ? Colors.red
-                          //           : Colors.blue,
-                          //       onPressed: () {
-                          //         if (!movielist.contains(movie)) {
-                          //           context.read<MovieProvider>().addToList(movie);
-                          //         } else {
-                          //           context.read<MovieProvider>().removeFromList(movie);
+                          var movie = movies[index];
+                          return Card(
+                            key: ValueKey(movie.title),
+                            child: ListTile(
+                              title: Text(movie.title),
+                              subtitle: Text(movie.time ?? "No time"),
+                              trailing: IconButton(
+                                icon: Icon(Icons.favorite),
+                                color: movielist.contains(movie)
+                                    ? Colors.red
+                                    : Colors.blue,
+                                onPressed: () {
+                                  if (!movielist.contains(movie)) {
+                                    context.read<MovieProvider>().addToList(movie);
+                                  } else {
+                                    context.read<MovieProvider>().removeFromList(movie);
                                   }
-                                // },
+                                },
                               ),
                             ),
 
-                        // }),
-                  // ),
-                // )
-  // )
-          // ],
-        // ),
-      // ),
-    ))])));
+                          );}),
+                  ),
+                )
+  )
+          ],
+        ),
+      ),
+    );
   }
 }
