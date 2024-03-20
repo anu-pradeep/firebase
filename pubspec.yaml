@@ -42,6 +42,9 @@ dependencies:
   google_fonts:
   intl_phone_field:
   provider:
+  image_picker:
+  firebase_storage:
+  cloud_firestore: ^2.5.4
 
 dev_dependencies:
   flutter_test:

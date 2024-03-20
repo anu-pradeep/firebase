@@ -30,6 +30,9 @@ class fireloginstate extends State<loginsfire>
   Widget build(BuildContext context) {
    return Scaffold(
      body: Container(
+       // decoration: BoxDecoration(
+       //   image:DecorationImage(image: NetworkImage("https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-food-western-food-simple-poster-background-image_25130.jpg"),),
+       // ),
        child: SingleChildScrollView(
          child:Form(
            key: formkey,
